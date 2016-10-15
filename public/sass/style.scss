@@ -1,0 +1,107 @@
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin font() {
+  font-family: 'Cuprum', sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  @include font();
+  text-align: center;
+}
+
+body {
+  background: url("http://i1040.photobucket.com/albums/b406/purpleswag/background-clouds_zpsvreypyzi.jpg") no-repeat;
+  background-size: cover;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+  h1 {
+    font-size: 60px;
+    font-family: 'Lobster Two', cursive;
+    color: #127ECE;
+    padding-top: 30px;
+  }
+  h3 {
+    display: inline;
+  }
+  .flag {
+    margin-left: 15px;
+  }
+  .main-info {
+    .wi {
+      font-size: 25px;
+    }
+    p {
+      display: inline;
+      margin-left: 10px;
+    }
+    .main-weather {
+      margin-top: 40px;
+    }
+  }
+  input {
+    width: 250px;
+    padding: 10px;
+    font-size: 18px;
+    margin: 100px auto 40px;
+    border: 1px solid;
+    border-radius: 3px;
+    font-family: 'Cuprum', sans-serif;
+    box-shadow: 1px 1px 10px 1px grey;
+    text-align: center;
+  }
+  li {
+    padding-bottom: 5px;
+  }
+  .gif {
+    width: 75px;
+    position: absolute;
+    top: 187px;
+  }
+  .days-container {
+    display: flex;
+    margin-top: 70px;
+    justify-content: space-between;
+  }
+  .day-item {
+    width: 14%;
+    
+  }
+  .day-item:not(:last-child) .weather-info {
+      border-right: 1px solid;
+    }
+  .date {
+        margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: bold;
+  } 
+}

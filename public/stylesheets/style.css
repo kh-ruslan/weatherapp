@@ -1,0 +1,119 @@
+/* line 1, ../sass/style.scss */
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 15, ../sass/style.scss */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+/* line 22, ../sass/style.scss */
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Cuprum', sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  text-align: center;
+}
+
+/* line 32, ../sass/style.scss */
+body {
+  background: url("http://i1040.photobucket.com/albums/b406/purpleswag/background-clouds_zpsvreypyzi.jpg") no-repeat;
+  background-size: cover;
+}
+
+/* line 37, ../sass/style.scss */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 15px;
+}
+
+/* line 44, ../sass/style.scss */
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+/* line 47, ../sass/style.scss */
+.container h1 {
+  font-size: 60px;
+  font-family: 'Lobster Two', cursive;
+  color: #127ECE;
+  padding-top: 30px;
+}
+/* line 53, ../sass/style.scss */
+.container h3 {
+  display: inline;
+}
+/* line 56, ../sass/style.scss */
+.container .flag {
+  margin-left: 15px;
+}
+/* line 60, ../sass/style.scss */
+.container .main-info .wi {
+  font-size: 25px;
+}
+/* line 63, ../sass/style.scss */
+.container .main-info p {
+  display: inline;
+  margin-left: 10px;
+}
+/* line 67, ../sass/style.scss */
+.container .main-info .main-weather {
+  margin-top: 40px;
+}
+/* line 71, ../sass/style.scss */
+.container input {
+  width: 250px;
+  padding: 10px;
+  font-size: 18px;
+  margin: 100px auto 40px;
+  border: 1px solid;
+  border-radius: 3px;
+  font-family: 'Cuprum', sans-serif;
+  box-shadow: 1px 1px 10px 1px grey;
+  text-align: center;
+}
+/* line 82, ../sass/style.scss */
+.container li {
+  padding-bottom: 5px;
+}
+/* line 85, ../sass/style.scss */
+.container .gif {
+  width: 75px;
+  position: absolute;
+  top: 187px;
+}
+/* line 90, ../sass/style.scss */
+.container .days-container {
+  display: flex;
+  margin-top: 70px;
+  justify-content: space-between;
+}
+/* line 95, ../sass/style.scss */
+.container .day-item {
+  width: 14%;
+}
+/* line 99, ../sass/style.scss */
+.container .day-item:not(:last-child) .weather-info {
+  border-right: 1px solid;
+}
+/* line 102, ../sass/style.scss */
+.container .date {
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: bold;
+}
