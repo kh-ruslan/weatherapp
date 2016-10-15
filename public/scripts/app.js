@@ -42,7 +42,7 @@ var MainApp = React.createClass({
     });
 
     var place = autocomplete.getPlace();
-    var city_name = place.formatted_address;
+    var city_name = place.name;
 
     var source = "http://api.openweathermap.org/data/2.5/forecast/daily?q=" + city_name + "&units=metric&lang=ru&APPID=4b69a135771ec8bbe15a1d86a9cef569";
     console.log(place);
