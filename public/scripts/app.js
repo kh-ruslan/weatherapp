@@ -95,7 +95,7 @@ var SingleInfo = React.createClass({
     return (
       <div className=''>
         <input id='input'/>
-        <img className='gif' src="http://hulk-games.com/themes/happywheels_v2//resources/img/loading.gif" style={this.props.gif}/>
+        <img className='gif' src="https://hulk-games.com/themes/happywheels_v2//resources/img/loading.gif" style={this.props.gif}/>
         <div>
           <h3>{this.props.city}</h3>
           <img className='flag' src={this.props.flag}/>
