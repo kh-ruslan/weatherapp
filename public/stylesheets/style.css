@@ -30,7 +30,7 @@ html {
 
 /* line 32, ../sass/style.scss */
 body {
-  background: url("https://i1040.photobucket.com/albums/b406/purpleswag/background-clouds_zpsvreypyzi.jpg") no-repeat;
+  background: url("../images/bg.jpg") no-repeat;
   background-size: cover;
 }
 

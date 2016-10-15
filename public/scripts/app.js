@@ -63,7 +63,7 @@ var MainApp = React.createClass({
     return (
       <div className='container'>        
         <h1 className="title">Weather App</h1>
-        <SingleInfo
+        <CityInfo
           city={this.state.city}
           flag={this.state.flag}
           gif={this.state.gif}
@@ -90,12 +90,12 @@ var MainApp = React.createClass({
   }
 })
 
-var SingleInfo = React.createClass({
+var CityInfo = React.createClass({
   render: function() {
     return (
       <div className=''>
         <input id='input'/>
-        <img className='gif' src="https://hulk-games.com/themes/happywheels_v2//resources/img/loading.gif" style={this.props.gif}/>
+        <img className='gif' src="../images/loading.gif" style={this.props.gif}/>
         <div>
           <h3>{this.props.city}</h3>
           <img className='flag' src={this.props.flag}/>
