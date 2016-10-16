@@ -47,9 +47,7 @@ var MainApp = React.createClass({
     let city_name = place.name;
     let country_name = place.address_components[place.address_components.length - 1].long_name
 
-    let source = "http://api.openweathermap.org/data/2.5/forecast/daily?q=" + city_name + ", " + country_name + "&units=metric&lang=ru&APPID=4b69a135771ec8bbe15a1d86a9cef569";
-    console.log(place);
-    console.log(source);
+    let source = "http://api.openweathermap.org/data/2.5/forecast/daily?q=" + city_name + ", " + country_name + "&units=metric&lang=ru&APPID=4b69a135771ec8bbe15a1d86a9cef569";    
     this.serverRequest = $.get(source, function(result) {
       this.setState({
         gif: {
