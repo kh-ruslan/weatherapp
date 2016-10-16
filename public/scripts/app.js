@@ -1,9 +1,12 @@
-var autocomplete;
-var options = { weekday: 'short', month: 'short', day: 'numeric' };
+var CityInfo = require('city-info');
+var WeatherInfo = require('weather-info');
+
+let autocomplete;
+const options = { weekday: 'short', month: 'short', day: 'numeric' };
 
 function convertWindDirection(dir) {
-  var rose = ['С', 'СВ', 'В', 'ЮВ', 'Ю', 'ЮЗ', 'З', 'СЗ'];
-  var eightPoint = Math.floor(dir / 45);
+  let rose = ['С', 'СВ', 'В', 'ЮВ', 'Ю', 'ЮЗ', 'З', 'СЗ'];
+  let eightPoint = Math.floor(dir / 45);
   return rose[eightPoint];
 }
 
@@ -20,14 +23,13 @@ var MainApp = React.createClass({
   },
 
   componentDidMount: function() {
-    var options = {
+    const options = {
       types: ['(cities)']
     };
 
-    var input = document.getElementById('input');
+    let input = document.getElementById('input');
     autocomplete = new google.maps.places.Autocomplete(input, options);
     autocomplete.addListener('place_changed', this.update);
-
   },
 
   componentWillUnmount: function() {
@@ -41,10 +43,11 @@ var MainApp = React.createClass({
       }
     });
 
-    var place = autocomplete.getPlace();
-    var city_name = place.name;
+    let place = autocomplete.getPlace();
+    let city_name = place.name;
+    let country_name = place.address_components[place.address_components.length - 1].long_name
 
-    var source = "http://api.openweathermap.org/data/2.5/forecast/daily?q=" + city_name + "&units=metric&lang=ru&APPID=4b69a135771ec8bbe15a1d86a9cef569";
+    let source = "http://api.openweathermap.org/data/2.5/forecast/daily?q=" + city_name + ", " + country_name + "&units=metric&lang=ru&APPID=4b69a135771ec8bbe15a1d86a9cef569";
     console.log(place);
     console.log(source);
     this.serverRequest = $.get(source, function(result) {
@@ -69,7 +72,7 @@ var MainApp = React.createClass({
           gif={this.state.gif}
         />
         <div className='days-container'>
-        {this.state.list.map(function(content) {
+        {this.state.list.map((content) => {
             let date = new Date(content.dt * 1000)
           return <WeatherInfo  
             date={date.toLocaleDateString('ru-RU', options)}        
@@ -87,45 +90,6 @@ var MainApp = React.createClass({
         </div>
       </div>
     );
-  }
-})
-
-var CityInfo = React.createClass({
-  render: function() {
-    return (
-      <div className=''>
-        <input id='input'/>
-        <img className='gif' src="../images/loading.gif" style={this.props.gif}/>
-        <div>
-          <h3>{this.props.city}</h3>
-          <img className='flag' src={this.props.flag}/>
-        </div>
-      </div>
-    )
-  }
-})
-
-var WeatherInfo = React.createClass({
-  render: function() {
-    return (
-      <div className='day-item'>
-        <p className='date'>{this.props.date}</p>  
-        <div className='weather-info'>             
-          <div className='main-info'>        
-            <i className={this.props.icon}></i>
-            <p> <i>{this.props.description}</i></p>        
-          </div>       
-          <ul>
-            <li><p><b>Днем: {this.props.tempDay} &deg;C</b></p></li>
-            <li><p><b>Ночью: {this.props.tempNight} &deg;C</b></p></li>        
-            <li><p>Давление: {this.props.pressure} мм</p></li>
-            <li><p>Влажность: {this.props.humidity}%</p></li>
-            <li><p>Ветер: {this.props.wind} м/с, {this.props.windDir}</p></li>
-            <li><p>Облачность: {this.props.clouds}%</p></li>
-          </ul>
-        </div>
-      </div>
-    )
   }
 })
 
