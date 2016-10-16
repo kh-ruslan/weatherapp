@@ -22,7 +22,7 @@ p {
 body,
 html {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   margin: 0;
   padding: 0;
   @include font();
@@ -104,4 +104,33 @@ ul {
     font-size: 22px;
     font-weight: bold;
   } 
+}
+
+@media (max-width: 767px) {
+  body, html {
+    font-size: 19px;
+  }
+  .container {  
+    .days-container {
+      display: flex;
+      margin-top: 70px;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+    .day-item {
+      width: initial;    
+    }
+    .day-item:not(:last-child) .weather-info {
+      border-right: none;
+      border-bottom: 1px solid;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+    }  
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body, html {
+    font-size: 14px;
+  }
 }
